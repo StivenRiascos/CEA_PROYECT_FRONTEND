@@ -1,0 +1,247 @@
+<main class="home-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Zoológico de Mocoa</h1>
+      <p class="hero-description">
+        Descubre la biodiversidad del Putumayo en un espacio dedicado a la
+        conservación y educación ambiental
+      </p>
+      <div class="hero-buttons">
+        <button class="primary-button">Planea tu visita</button>
+        <button class="secondary-button">Conoce nuestros animales</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Bienvenidos al Zoológico de Mocoa</h2>
+        <p class="section-description">
+          Un espacio dedicado a la conservación de la fauna amazónica, la
+          educación ambiental y la investigación científica.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image-container">
+            <img
+              src="assets/images/conservacion.jpg"
+              alt="Conservación"
+              class="feature-image"
+            />
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">Conservación</h3>
+            <p class="feature-description">
+              Trabajamos para proteger especies en peligro de extinción y
+              preservar la biodiversidad amazónica.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image-container">
+            <img
+              src="assets/images/educacion.jpg"
+              alt="Educación"
+              class="feature-image"
+            />
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">Educación</h3>
+            <p class="feature-description">
+              Ofrecemos programas educativos para todas las edades, promoviendo
+              la conciencia ambiental.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image-container">
+            <img
+              src="assets/images/investigacion.jpg"
+              alt="Investigación"
+              class="feature-image"
+            />
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">Investigación</h3>
+            <p class="feature-description">
+              Desarrollamos proyectos de investigación para el estudio y
+              conservación de la fauna amazónica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Animals -->
+  <section class="section animals-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestros Animales</h2>
+        <p class="section-description">
+          Conoce algunas de las especies emblemáticas que habitan en nuestro
+          zoológico.
+        </p>
+      </div>
+      <div class="animals-grid">
+        <div *ngFor="let animal of featuredAnimals" class="animal-card">
+          <div class="animal-image-container">
+            <img
+              [src]="
+                'assets/images/animals/' +
+                animal.name.toLowerCase().replace(' ', '-') +
+                '.jpg'
+              "
+              [alt]="animal.name"
+              class="animal-image"
+            />
+          </div>
+          <div class="animal-content">
+            <h3 class="animal-title">{{ animal.name }}</h3>
+            <a
+              [routerLink]="[
+                '/animales',
+                animal.name.toLowerCase().replace(' ', '-')
+              ]"
+              class="animal-link"
+            >
+              Conocer más
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-footer">
+        <button class="primary-button">Ver todos los animales</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit Information -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Planea tu Visita</h2>
+        <p class="section-description">
+          Todo lo que necesitas saber para disfrutar de una experiencia
+          inolvidable en nuestro zoológico.
+        </p>
+      </div>
+
+      <div class="visit-grid">
+        <div class="info-card">
+          <h3 class="info-title">Horarios</h3>
+          <ul class="schedule-list">
+            <li class="schedule-item">
+              <span>Lunes a Viernes:</span>
+              <span>9:00 AM - 5:00 PM</span>
+            </li>
+            <li class="schedule-item">
+              <span>Sábados y Domingos:</span>
+              <span>8:00 AM - 6:00 PM</span>
+            </li>
+            <li class="schedule-item">
+              <span>Días Festivos:</span>
+              <span>9:00 AM - 4:00 PM</span>
+            </li>
+          </ul>
+
+          <h3 class="info-title">Tarifas</h3>
+          <ul class="price-list">
+            <li class="price-item">
+              <span>Adultos:</span>
+              <span>$25.000 COP</span>
+            </li>
+            <li class="price-item">
+              <span>Niños (4-12 años):</span>
+              <span>$15.000 COP</span>
+            </li>
+            <li class="price-item">
+              <span>Adultos Mayores:</span>
+              <span>$18.000 COP</span>
+            </li>
+            <li class="price-item">
+              <span>Estudiantes:</span>
+              <span>$20.000 COP</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3 class="info-title">Ubicación</h3>
+          <p class="info-description">
+            Estamos ubicados en la vía Mocoa - Villagarzón, a 5 km del centro de
+            Mocoa, Putumayo.
+          </p>
+
+          <div class="map-container">
+            <iframe
+              width="100%"
+              height="255"
+              frameborder="0"
+              class="map-frame"
+              allowfullscreen
+              loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.279603380363!2d-76.63012382522291!3d1.0842286989053749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e28ae3d0fd7c469%3A0xfa3edb0fe991e20b!2sCEA%20(Centro%20Experimental%20Amazonico)!5e1!3m2!1ses-419!2sco!4v1743131043027!5m2!1ses-419!2sco"
+            >
+            </iframe>
+          </div>
+
+          <p class="direccion">
+            <strong>Dirección:</strong>
+            <a
+              href="https://maps.app.goo.gl/Cw7TKjWb69ygxDUx9"
+              target="_blank"
+              class="map-link"
+            >
+              Ver en Google Maps
+            </a>
+          </p>
+
+          <h3 class="info-title">Contacto</h3>
+          <ul class="contact-info-list">
+            <li class="contact-info-item">
+              <span>Teléfono:</span>
+              <span>(+57) 311-234-5678</span>
+            </li>
+            <li class="contact-info-item">
+              <span>Email:</span>
+              <span>infozoologicomocoa.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2 class="newsletter-title">Suscríbete a nuestro boletín</h2>
+          <p class="newsletter-description">
+            Recibe noticias, eventos y promociones especiales directamente en tu
+            correo.
+          </p>
+        </div>
+        <div class="newsletter-form">
+          <input
+            type="email"
+            placeholder="Tu correo electrónico"
+            class="newsletter-input"
+          />
+          <button class="newsletter-button">Suscribirse</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

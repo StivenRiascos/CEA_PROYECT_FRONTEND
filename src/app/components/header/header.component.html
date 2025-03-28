@@ -1,0 +1,103 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!-- Logo -->
+      <a routerLink="/" class="logo">
+        <div class="logo-circle">
+          <div class="logo-text">CEA</div>
+        </div>
+        <span class="logo-name">CENTRO EXPERIMENTAL AMAZONICO </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          <li>
+            <a
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
+          </li>
+          <li>
+            <a routerLink="/animales" routerLinkActive="active">Animales</a>
+          </li>
+          <li>
+            <a routerLink="/visitanos" routerLinkActive="active">Visítanos</a>
+          </li>
+          <li>
+            <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button -->
+      <button class="cta-button">Comprar Entradas</button>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="mobile-menu-button"
+        (click)="toggleMenu()"
+        [attr.aria-label]="isMenuOpen ? 'Cerrar menú' : 'Abrir menú'"
+      >
+        <i class="fa" [ngClass]="isMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isMenuOpen" class="mobile-menu">
+    <nav>
+      <ul class="mobile-nav-list">
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMenu()"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/nosotros"
+            routerLinkActive="active"
+            (click)="closeMenu()"
+            >Nosotros</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/animales"
+            routerLinkActive="active"
+            (click)="closeMenu()"
+            >Animales</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/visitanos"
+            routerLinkActive="active"
+            (click)="closeMenu()"
+            >Visítanos</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/contacto"
+            routerLinkActive="active"
+            (click)="closeMenu()"
+            >Contacto</a
+          >
+        </li>
+        <li>
+          <button class="mobile-cta-button">Comprar Entradas</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
