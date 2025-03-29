@@ -13,10 +13,10 @@ import { BookingService } from '../../services/booking.service';
 })
 export class HomeComponent {
   featuredAnimals = [
-    { name: 'Jaguar', image: 'jaguar.jpg' },
-    { name: 'Mono Tití', image: 'mono-titi.jpg' },
-    { name: 'Guacamaya', image: 'guacamaya.jpg' },
-    { name: 'Anaconda', image: 'anaconda.jpg' },
+    { name: 'Jaguar', image: 'jaguar.jpg', slug: 'jaguar' },
+    { name: 'Mono Tití', image: 'monotiti.jpg', slug: 'monotiti' },
+    { name: 'Guacamaya', image: 'guacamaya.jpg', slug: 'guacamaya' },
+    { name: 'Anaconda', image: 'Anaconda.jpg', slug: 'Anaconda' },
   ];
 
   constructor(private bookingService: BookingService) {}

@@ -32,7 +32,7 @@
         <div class="feature-card">
           <div class="feature-image-container">
             <img
-              src="assets/images/conservacion.jpg"
+              src="../../../assets/images/conservacion.jpg"
               alt="Conservación"
               class="feature-image"
             />
@@ -49,7 +49,7 @@
         <div class="feature-card">
           <div class="feature-image-container">
             <img
-              src="assets/images/educacion.jpg"
+              src="../../../assets/images/educacion.jpg"
               alt="Educación"
               class="feature-image"
             />
@@ -66,7 +66,7 @@
         <div class="feature-card">
           <div class="feature-image-container">
             <img
-              src="assets/images/investigacion.jpg"
+              src="../../../assets/images/ambiente.jpg"
               alt="Investigación"
               class="feature-image"
             />
@@ -97,30 +97,19 @@
         <div *ngFor="let animal of featuredAnimals" class="animal-card">
           <div class="animal-image-container">
             <img
-              [src]="
-                'assets/images/animals/' +
-                animal.name.toLowerCase().replace(' ', '-') +
-                '.jpg'
-              "
+              [src]="'../../../assets/images/' + animal.image"
               [alt]="animal.name"
               class="animal-image"
             />
           </div>
           <div class="animal-content">
             <h3 class="animal-title">{{ animal.name }}</h3>
-            <a
-              [routerLink]="[
-                '/animales',
-                animal.name.toLowerCase().replace(' ', '-')
-              ]"
-              class="animal-link"
-            >
+            <a [routerLink]="['/animales', animal.slug]" class="animal-link">
               Conocer más
             </a>
           </div>
         </div>
       </div>
-
       <div class="section-footer">
         <button class="primary-button">Ver todos los animales</button>
       </div>
