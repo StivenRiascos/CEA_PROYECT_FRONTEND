@@ -1,1 +1,364 @@
-<p>about works!</p>
+<div class="about-container">
+  <!-- Banner principal -->
+  <div class="about-banner">
+    <div class="overlay">
+      <h1>Nosotros</h1>
+      <p>Centro Experimental Amazónico - CEA</p>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content-container">
+    <!-- Introducción -->
+    <section class="intro-section">
+      <div class="section-content">
+        <h2>Centro Experimental Amazónico (CEA)</h2>
+        <p>
+          El Centro Experimental Amazónico (CEA) es un área protegida de 380 hectáreas, ubicada en el municipio de Mocoa, 
+          departamento del Putumayo. Creado en 1985 por el INDERENA y transferido a CORPOAMAZONIA en 1995, el CEA representa 
+          uno de los esfuerzos más importantes para la conservación, investigación y educación ambiental en la región amazónica colombiana.
+        </p>
+      </div>
+    </section>
+
+    <!-- Generalidades -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('generalidades')">
+        <h2>Generalidades</h2>
+        <i class="fa" [ngClass]="isSectionActive('generalidades') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('generalidades')}">
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Ubicación y características</h3>
+            <p>
+              El Centro Experimental Amazónico (CEA) es un área protegida de 380 hectáreas, ubicada en el municipio de Mocoa, 
+              departamento del Putumayo, a 650 m.s.n.m., con temperatura promedio de 24°C y precipitación anual de 4.000 mm.
+            </p>
+            <p>
+              El CEA fue creado en 1985 por el INDERENA y transferido a CORPOAMAZONIA en 1995. Está conformado por ecosistemas 
+              de bosque húmedo tropical, con alta diversidad biológica y cultural, representativa del piedemonte amazónico colombiano.
+            </p>
+          </div>
+          
+          <div class="info-item">
+            <h3>Biodiversidad</h3>
+            <p>
+              El CEA alberga una gran diversidad de especies de flora y fauna, incluyendo:
+            </p>
+            <ul>
+              <li>Más de 300 especies de aves</li>
+              <li>Más de 100 especies de mamíferos</li>
+              <li>Numerosas especies de reptiles, anfibios e insectos</li>
+              <li>Una rica diversidad de plantas, incluyendo especies maderables, medicinales y ornamentales</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h3>Infraestructura</h3>
+            <p>
+              El CEA cuenta con:
+            </p>
+            <ul>
+              <li>Centro de atención a visitantes</li>
+              <li>Senderos ecológicos interpretativos</li>
+              <li>Centro de rehabilitación de fauna silvestre</li>
+              <li>Vivero forestal</li>
+              <li>Laboratorios de investigación</li>
+              <li>Alojamiento para investigadores</li>
+              <li>Aulas ambientales</li>
+              <li>Zonas de recreación</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h3>Importancia ecológica</h3>
+            <p>
+              El CEA cumple funciones ecológicas vitales como:
+            </p>
+            <ul>
+              <li>Conservación de ecosistemas representativos del piedemonte amazónico</li>
+              <li>Protección de cuencas hidrográficas</li>
+              <li>Mantenimiento de servicios ecosistémicos</li>
+              <li>Conservación de especies amenazadas</li>
+              <li>Corredor biológico para la fauna silvestre</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Misión -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('mision')">
+        <h2>Misión</h2>
+        <i class="fa" [ngClass]="isSectionActive('mision') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('mision')}">
+        <p>
+          Contribuir al conocimiento, conservación y uso sostenible de la biodiversidad del sur de la Amazonia colombiana, 
+          a través de la investigación científica, el desarrollo tecnológico, la educación ambiental y la gestión de información, 
+          para beneficio de la región y sus comunidades.
+        </p>
+      </div>
+    </section>
+
+    <!-- Visión -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('vision')">
+        <h2>Visión</h2>
+        <i class="fa" [ngClass]="isSectionActive('vision') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('vision')}">
+        <p>
+          Para el año 2030, el Centro Experimental Amazónico será reconocido como un centro de referencia nacional e internacional 
+          en investigación, conservación y educación ambiental para el sur de la Amazonia colombiana, contribuyendo al desarrollo 
+          sostenible de la región y a la preservación de su patrimonio natural y cultural.
+        </p>
+      </div>
+    </section>
+
+    <!-- Objetivos -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('objetivos')">
+        <h2>Objetivos</h2>
+        <i class="fa" [ngClass]="isSectionActive('objetivos') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('objetivos')}">
+        <ul>
+          <li>Desarrollar investigación científica y tecnológica sobre la biodiversidad amazónica.</li>
+          <li>Conservar muestras representativas de los ecosistemas del piedemonte amazónico.</li>
+          <li>Promover la educación ambiental y la sensibilización sobre la importancia de la conservación.</li>
+          <li>Implementar programas de rehabilitación y reintroducción de fauna silvestre.</li>
+          <li>Fomentar el uso sostenible de los recursos naturales de la región.</li>
+          <li>Servir como espacio para la recreación y el turismo ecológico responsable.</li>
+          <li>Desarrollar modelos productivos sostenibles adaptados a las condiciones amazónicas.</li>
+          <li>Contribuir a la mitigación y adaptación al cambio climático.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Funciones -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('funciones')">
+        <h2>Funciones</h2>
+        <i class="fa" [ngClass]="isSectionActive('funciones') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('funciones')}">
+        <ul>
+          <li>Centro de investigación científica sobre biodiversidad amazónica.</li>
+          <li>Centro de rehabilitación y manejo de fauna silvestre.</li>
+          <li>Estación biológica para estudios de campo.</li>
+          <li>Centro de educación ambiental para estudiantes y visitantes.</li>
+          <li>Área de conservación de ecosistemas naturales.</li>
+          <li>Espacio para el desarrollo de proyectos productivos sostenibles.</li>
+          <li>Atractivo ecoturístico del departamento del Putumayo.</li>
+          <li>Banco de germoplasma de especies vegetales nativas.</li>
+          <li>Centro de capacitación en prácticas ambientales sostenibles.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Ingreso de visitantes al CEA -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('ingreso')">
+        <h2>Ingreso de visitantes al CEA</h2>
+        <i class="fa" [ngClass]="isSectionActive('ingreso') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('ingreso')}">
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Horarios de atención</h3>
+            <p>El Centro Experimental Amazónico atiende a los visitantes en los siguientes horarios:</p>
+            <ul>
+              <li><strong>Lunes a viernes:</strong> 8:00 a.m. a 4:00 p.m.</li>
+              <li><strong>Sábados, domingos y festivos:</strong> 8:00 a.m. a 4:00 p.m.</li>
+            </ul>
+            <p><strong>Nota:</strong> El último ingreso de visitantes es a las 3:00 p.m.</p>
+          </div>
+          
+          <div class="info-item">
+            <h3>Tarifas de ingreso</h3>
+            <div class="tariff-table">
+              <div class="tariff-row header">
+                <div class="tariff-cell">Categoría</div>
+                <div class="tariff-cell">Valor</div>
+              </div>
+              <div class="tariff-row">
+                <div class="tariff-cell">Adultos</div>
+                <div class="tariff-cell">$10.000</div>
+              </div>
+              <div class="tariff-row">
+                <div class="tariff-cell">Niños (5-12 años)</div>
+                <div class="tariff-cell">$5.000</div>
+              </div>
+              <div class="tariff-row">
+                <div class="tariff-cell">Estudiantes con carné</div>
+                <div class="tariff-cell">$7.000</div>
+              </div>
+              <div class="tariff-row">
+                <div class="tariff-cell">Adultos mayores</div>
+                <div class="tariff-cell">$7.000</div>
+              </div>
+              <div class="tariff-row">
+                <div class="tariff-cell">Grupos (más de 20 personas)</div>
+                <div class="tariff-cell">Descuento del 10%</div>
+              </div>
+            </div>
+            <p><strong>Nota:</strong> Niños menores de 5 años no pagan entrada.</p>
+          </div>
+          
+          <div class="info-item">
+            <h3>Recomendaciones para visitantes</h3>
+            <ul>
+              <li>Usar ropa y calzado cómodos, preferiblemente de colores neutros.</li>
+              <li>Traer protector solar, repelente de insectos y sombrero.</li>
+              <li>Traer agua para hidratarse durante el recorrido.</li>
+              <li>No alimentar a los animales.</li>
+              <li>No extraer plantas, animales o cualquier elemento del CEA.</li>
+              <li>Seguir las indicaciones de los guías y del personal del CEA.</li>
+              <li>Depositar los residuos en los contenedores correspondientes.</li>
+              <li>Mantener un comportamiento respetuoso con la naturaleza.</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h3>Servicios para visitantes</h3>
+            <ul>
+              <li>Guías especializados</li>
+              <li>Senderos interpretativos</li>
+              <li>Áreas de descanso</li>
+              <li>Cafetería</li>
+              <li>Baños</li>
+              <li>Zona de parqueo</li>
+              <li>Tienda de souvenirs</li>
+              <li>Primeros auxilios</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solicitud de material vegetal -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('material')">
+        <h2>Solicitud de material vegetal</h2>
+        <i class="fa" [ngClass]="isSectionActive('material') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('material')}">
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Vivero forestal</h3>
+            <p>
+              El CEA cuenta con un vivero forestal donde se producen plántulas de especies nativas amazónicas para 
+              programas de reforestación, restauración ecológica y proyectos productivos sostenibles.
+            </p>
+            <p>
+              Las especies disponibles incluyen:
+            </p>
+            <ul>
+              <li>Especies maderables: cedro, abarco, achapo, entre otras.</li>
+              <li>Especies frutales: arazá, copoazú, camu camu, entre otras.</li>
+              <li>Especies ornamentales: heliconias, bromelias, orquídeas, entre otras.</li>
+              <li>Especies medicinales: uña de gato, sangre de drago, entre otras.</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h3>Procedimiento de solicitud</h3>
+            <p>Para solicitar material vegetal del CEA, se debe seguir el siguiente procedimiento:</p>
+            <ol>
+              <li>Presentar una solicitud formal dirigida a la Dirección Territorial Putumayo de CORPOAMAZONIA.</li>
+              <li>Especificar las especies y cantidades requeridas.</li>
+              <li>Indicar el objetivo y destino del material vegetal (reforestación, investigación, etc.).</li>
+              <li>Adjuntar documentos de identificación del solicitante.</li>
+              <li>En caso de proyectos, adjuntar una breve descripción del mismo.</li>
+            </ol>
+          </div>
+          
+          <div class="info-item">
+            <h3>Requisitos</h3>
+            <p>Los requisitos para la entrega de material vegetal son:</p>
+            <ul>
+              <li>La solicitud debe ser aprobada por CORPOAMAZONIA.</li>
+              <li>El solicitante debe comprometerse a dar un uso adecuado al material vegetal.</li>
+              <li>Para cantidades grandes, se debe contar con un plan de siembra y mantenimiento.</li>
+              <li>El transporte del material vegetal corre por cuenta del solicitante.</li>
+              <li>Se debe firmar un acta de entrega y compromiso de uso.</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h3>Contacto</h3>
+            <p>Para mayor información sobre la solicitud de material vegetal, puede contactar a:</p>
+            <ul>
+              <li><strong>Dirección:</strong> Centro Experimental Amazónico, Vía Mocoa-Villagarzón km 7, Mocoa, Putumayo</li>
+              <li><strong>Teléfono:</strong> (8) 4296 641</li>
+              <li><strong>Correo electrónico:</strong> ceacorpoamazonia.gov.co</li>
+              <li><strong>Horario de atención:</strong> Lunes a viernes de 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programas -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('programas')">
+        <h2>Programas</h2>
+        <i class="fa" [ngClass]="isSectionActive('programas') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('programas')}">
+        <div class="program-cards">
+          <div class="program-card">
+            <div class="program-icon">
+              <i class="fa fa-flask"></i>
+            </div>
+            <h3>Investigación</h3>
+            <p>Desarrollo de proyectos de investigación sobre biodiversidad, ecosistemas y servicios ambientales de la región amazónica.</p>
+          </div>
+          
+          <div class="program-card">
+            <div class="program-icon">
+              <i class="fa fa-leaf"></i>
+            </div>
+            <h3>Conservación</h3>
+            <p>Protección de ecosistemas naturales, rehabilitación de fauna silvestre y preservación de especies amenazadas.</p>
+          </div>
+          
+          <div class="program-card">
+            <div class="program-icon">
+              <i class="fa fa-book"></i>
+            </div>
+            <h3>Educación Ambiental</h3>
+            <p>Sensibilización y formación sobre la importancia de la conservación ambiental a través de talleres, recorridos y actividades.</p>
+          </div>
+          
+          <div class="program-card">
+            <div class="program-icon">
+              <i class="fa fa-tree"></i>
+            </div>
+            <h3>Ecoturismo</h3>
+            <p>Promoción del turismo ecológico responsable como herramienta de conservación y desarrollo sostenible.</p>
+          </div>
+          
+          <div class="program-card">
+            <div class="program-icon">
+              <i class="fa fa-pagelines"></i>
+            </div>
+            <h3>Producción Sostenible</h3>
+            <p>Desarrollo de modelos productivos sostenibles adaptados a las condiciones amazónicas.</p>
+          </div>
+          
+          <div class="program-card">
+            <div class="program-icon">
+              <i class="fa fa-paw"></i>
+            </div>
+            <h3>Rehabilitación de Fauna</h3>
+            <p>Atención, rehabilitación y reintroducción de fauna silvestre decomisada o rescatada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

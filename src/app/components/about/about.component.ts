@@ -1,11 +1,23 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+  styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
+  // Secciones colapsables
+  activeSection: string | null = 'generalidades'; // Por defecto abrimos la primera sección
 
+  toggleSection(section: string): void {
+    this.activeSection = this.activeSection === section ? null : section;
+  }
+
+  isSectionActive(section: string): boolean {
+    return this.activeSection === section;
+  }
 }
