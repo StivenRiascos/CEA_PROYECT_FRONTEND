@@ -1,1 +1,99 @@
-<p>animals works!</p>
+<div class="animals-container">
+  <!-- Banner principal -->
+  <div class="animals-banner">
+    <div class="overlay">
+      <div class="banner-content">
+        <h1>Nuestros Animales</h1>
+        <div class="divider">
+          <span class="divider-icon"><i class="fa fa-paw"></i></span>
+        </div>
+        <p>Descubre la diversidad de fauna del Centro Experimental Amazónico</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content-container">
+    <!-- Introducción -->
+    <section class="intro-section">
+      <div class="section-title">
+        <h2>Biodiversidad Amazónica</h2>
+        <div class="title-decoration">
+          <span></span><i class="fa fa-leaf"></i><span></span>
+        </div>
+      </div>
+      <p>
+        El Centro Experimental Amazónico alberga una gran variedad de especies representativas 
+        de la biodiversidad amazónica. Conoce algunas de las especies más emblemáticas que 
+        puedes encontrar durante tu visita.
+      </p>
+    </section>
+
+    <!-- Filtros de categoría -->
+    <div class="category-filters">
+      <button 
+        [class.active]="selectedCategory === 'todos'" 
+        (click)="filterByCategory('todos')"
+      >
+        <i class="fa fa-th"></i> Todos
+      </button>
+      <button 
+        [class.active]="selectedCategory === 'aves'" 
+        (click)="filterByCategory('aves')"
+      >
+        <i class="fa fa-feather"></i> Aves
+      </button>
+      <button 
+        [class.active]="selectedCategory === 'terrestres'" 
+        (click)="filterByCategory('terrestres')"
+      >
+        <i class="fa fa-frog"></i> Reptiles y Anfibios
+      </button>
+      <button 
+        [class.active]="selectedCategory === 'mamiferos'" 
+        (click)="filterByCategory('mamiferos')"
+      >
+        <i class="fa fa-paw"></i> Mamíferos
+      </button>
+    </div>
+
+    <!-- Galería de animales -->
+    <div class="animals-gallery">
+      <div class="animal-card" *ngFor="let animal of filteredAnimals" (click)="openAnimalDetail(animal)">
+        <div class="animal-image">
+          <img [src]="animal.image" [alt]="animal.name">
+          <div class="category-badge" [ngClass]="animal.category">
+            <i class="fa" 
+              [ngClass]="{
+                'fa-feather': animal.category === 'aves',
+                'fa-frog': animal.category === 'terrestres',
+                'fa-paw': animal.category === 'mamiferos'
+              }"
+            ></i>
+          </div>
+        </div>
+        <div class="animal-info">
+          <h3>{{animal.name}}</h3>
+          <p class="scientific-name">{{animal.scientificName}}</p>
+          <div class="view-more">
+            <span>Ver detalles</span>
+            <i class="fa fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mensaje si no hay animales -->
+    <div class="no-animals" *ngIf="filteredAnimals.length === 0">
+      <i class="fa fa-search"></i>
+      <p>No se encontraron animales en esta categoría</p>
+    </div>
+  </div>
+
+  <!-- Modal de detalle del animal -->
+  <app-animal-detail 
+    *ngIf="showDetail" 
+    [animal]="selectedAnimal" 
+    (close)="closeAnimalDetail()"
+  ></app-animal-detail>
+</div>

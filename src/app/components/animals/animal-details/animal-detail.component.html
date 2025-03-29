@@ -1,0 +1,57 @@
+<div class="animal-detail-overlay" (click)="closeDetail()">
+  <div class="animal-detail-container" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="closeDetail()">
+      <i class="fa fa-times"></i>
+    </button>
+    
+    <div class="animal-detail-content">
+      <div class="animal-detail-image">
+        <img [src]="animal.image" [alt]="animal.name">
+        <div class="conservation-status" [ngClass]="animal.conservation.split(' ')[0].toLowerCase()">
+          {{animal.conservation}}
+        </div>
+      </div>
+      
+      <div class="animal-detail-info">
+        <h2>{{animal.name}}</h2>
+        <p class="scientific-name">{{animal.scientificName}}</p>
+        
+        <div class="animal-description">
+          <p>{{animal.description}}</p>
+        </div>
+        
+        <div class="animal-data">
+          <div class="data-item">
+            <div class="data-icon">
+              <i class="fa fa-home"></i>
+            </div>
+            <div class="data-content">
+              <h4>Hábitat</h4>
+              <p>{{animal.habitat}}</p>
+            </div>
+          </div>
+          
+          <div class="data-item">
+            <div class="data-icon">
+              <i class="fa fa-utensils"></i>
+            </div>
+            <div class="data-content">
+              <h4>Alimentación</h4>
+              <p>{{animal.diet}}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="curiosities-section">
+          <h3>Curiosidades</h3>
+          <ul class="curiosities-list">
+            <li *ngFor="let curiosity of animal.curiosities">
+              <i class="fa fa-star"></i>
+              <span>{{curiosity}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
