@@ -1,0 +1,250 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: modal-appear 0.3s ease-out;
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #166534;
+  font-size: 1.5rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.close-button:hover {
+  color: #111827;
+}
+
+.modal-content {
+  padding: 0;
+}
+
+.booking-illustration {
+  background-color: #16a34a;
+  padding: 20px;
+  border-radius: 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+}
+
+.animals-image {
+  max-width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.booking-section {
+  padding: 20px;
+}
+
+.booking-section h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #166534;
+  font-size: 1.25rem;
+}
+
+.ticket-types {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ticket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f0fdf4;
+  border-radius: 12px;
+}
+
+.ticket-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-type {
+  font-weight: 600;
+  color: #166534;
+}
+
+.ticket-price {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.ticket-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.counter-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #16a34a;
+  color: white;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.counter-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.ticket-count {
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+}
+
+.date-time-section {
+  margin-bottom: 24px;
+}
+
+.date-picker {
+  margin-bottom: 16px;
+}
+
+.date-picker label,
+.time-picker label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.date-picker input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.time-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.time-button {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: white;
+  color: #374151;
+  cursor: pointer;
+}
+
+.time-button.selected {
+  background-color: #16a34a;
+  color: white;
+  border-color: #16a34a;
+}
+
+.summary-section {
+  background-color: #f0fdf4;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.total-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.total-label {
+  font-weight: 600;
+  color: #166534;
+}
+
+.total-price {
+  font-weight: 700;
+  color: #166534;
+  font-size: 1.25rem;
+}
+
+.tickets-count {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.reserve-button {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.reserve-button:hover {
+  background-color: #15803d;
+}

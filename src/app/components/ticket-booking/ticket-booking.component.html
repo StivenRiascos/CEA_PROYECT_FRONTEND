@@ -1,0 +1,90 @@
+<div class="modal-overlay" *ngIf="isVisible" (click)="closeModal()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Reserva de Entradas</h2>
+      <button class="close-button" (click)="closeModal()">×</button>
+    </div>
+
+    <div class="modal-content">
+      <div class="booking-illustration">
+        <img
+          src="assets/images/zoo-animals.png"
+          alt="Animales del zoológico"
+          class="animals-image"
+        />
+      </div>
+
+      <div class="booking-section">
+        <h3>Selecciona tus Entradas</h3>
+
+        <div class="ticket-types">
+          <div class="ticket-item" *ngFor="let ticket of ticketTypes">
+            <div class="ticket-info">
+              <span class="ticket-type">{{ ticket.type }}</span>
+              <span class="ticket-price"
+                >${{ formatPrice(ticket.price) }} COP</span
+              >
+            </div>
+            <div class="ticket-counter">
+              <button
+                class="counter-button"
+                (click)="decrementTicket(ticket)"
+                [disabled]="ticket.count === 0"
+              >
+                -
+              </button>
+              <span class="ticket-count">{{ ticket.count }}</span>
+              <button class="counter-button" (click)="incrementTicket(ticket)">
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="date-time-section">
+          <div class="date-picker">
+            <label for="visit-date">Fecha de visita:</label>
+            <input
+              type="date"
+              id="visit-date"
+              [(ngModel)]="selectedDate"
+              [min]="selectedDate"
+            />
+          </div>
+
+          <div class="time-picker">
+            <label>Horario de visita:</label>
+            <div class="time-options">
+              <button
+                *ngFor="let time of availableTimes"
+                class="time-button"
+                [class.selected]="selectedTime === time"
+                (click)="selectedTime = time"
+              >
+                {{ time }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-section">
+          <div class="total-info">
+            <span class="total-label">Total:</span>
+            <span class="total-price"
+              >${{ formatPrice(getTotalPrice()) }} COP</span
+            >
+          </div>
+          <div class="tickets-count">
+            <span>{{ getTotalTickets() }} entradas</span>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="reserve-button" (click)="reserveTickets()">
+            Reservar Ahora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

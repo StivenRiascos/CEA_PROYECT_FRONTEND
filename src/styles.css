@@ -73,3 +73,37 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Añade esto a tu archivo styles.css */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Mejoras para responsividad en styles.css */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}

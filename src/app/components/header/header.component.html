@@ -36,7 +36,9 @@
       </nav>
 
       <!-- CTA Button -->
-      <button class="cta-button">Comprar Entradas</button>
+      <button class="cta-button" (click)="openTicketBooking()">
+        Comprar Entradas
+      </button>
 
       <!-- Mobile Menu Button -->
       <button
@@ -95,9 +97,14 @@
           >
         </li>
         <li>
-          <button class="mobile-cta-button">Comprar Entradas</button>
+          <button class="mobile-cta-button" (click)="openTicketBooking()">
+            Comprar Entradas
+          </button>
         </li>
       </ul>
     </nav>
   </div>
+
+  <!-- Ticket Booking Modal -->
+  <app-ticket-booking></app-ticket-booking>
 </header>
