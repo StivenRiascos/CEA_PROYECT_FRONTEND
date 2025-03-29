@@ -2,8 +2,13 @@
   <!-- Banner principal -->
   <div class="about-banner">
     <div class="overlay">
-      <h1>Nosotros</h1>
-      <p>Centro Experimental Amazónico - CEA</p>
+      <div class="banner-content">
+        <h1>Conocenos</h1>
+        <div class="divider">
+          <span class="divider-icon"><i class="fa fa-leaf"></i></span>
+        </div>
+        <p>Centro Experimental Amazónico</p>
+      </div>
     </div>
   </div>
 
@@ -11,54 +16,97 @@
   <div class="content-container">
     <!-- Introducción -->
     <section class="intro-section">
-      <div class="section-content">
+      <div class="section-title">
         <h2>Centro Experimental Amazónico (CEA)</h2>
-        <p>
-          El Centro Experimental Amazónico (CEA) es un área protegida de 380 hectáreas, ubicada en el municipio de Mocoa, 
-          departamento del Putumayo. Creado en 1985 por el INDERENA y transferido a CORPOAMAZONIA en 1995, el CEA representa 
-          uno de los esfuerzos más importantes para la conservación, investigación y educación ambiental en la región amazónica colombiana.
-        </p>
+        <div class="title-decoration">
+          <span></span><i class="fa fa-tree"></i><span></span>
+        </div>
+      </div>
+      <p>
+        El Centro Experimental Amazónico es un área protegida de 380 hectáreas ubicada en Mocoa, Putumayo, 
+        dedicada a la conservación, investigación y educación ambiental en la región amazónica colombiana.
+      </p>
+    </section>
+
+    <!-- Misión y Visión -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('mision-vision')">
+        <div class="header-icon">
+          <i class="fa fa-compass"></i>
+        </div>
+        <h2>Misión y Visión</h2>
+        <div class="toggle-btn">
+          <i class="fa" [ngClass]="isSectionActive('mision-vision') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </div>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('mision-vision')}">
+        <div class="mission-vision-container">
+          <div class="mission-box">
+            <div class="box-header">
+              <i class="fa fa-bullseye"></i>
+              <h3>Misión</h3>
+            </div>
+            <p>
+              Contribuir al conocimiento, conservación y uso sostenible de la biodiversidad del sur de la Amazonia colombiana, 
+              a través de la investigación científica, el desarrollo tecnológico, la educación ambiental y la gestión de información, 
+              para beneficio de la región y sus comunidades.
+            </p>
+          </div>
+          <div class="vision-box">
+            <div class="box-header">
+              <i class="fa fa-eye"></i>
+              <h3>Visión</h3>
+            </div>
+            <p>
+              Para el año 2030, el Centro Experimental Amazónico será reconocido como un centro de referencia nacional e internacional 
+              en investigación, conservación y educación ambiental para el sur de la Amazonia colombiana, contribuyendo al desarrollo 
+              sostenible de la región y a la preservación de su patrimonio natural y cultural.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Generalidades -->
     <section class="info-section">
       <div class="section-header" (click)="toggleSection('generalidades')">
+        <div class="header-icon">
+          <i class="fa fa-info-circle"></i>
+        </div>
         <h2>Generalidades</h2>
-        <i class="fa" [ngClass]="isSectionActive('generalidades') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        <div class="toggle-btn">
+          <i class="fa" [ngClass]="isSectionActive('generalidades') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </div>
       </div>
       <div class="section-content" [ngClass]="{'active': isSectionActive('generalidades')}">
-        <div class="info-grid">
-          <div class="info-item">
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fa fa-map-marker"></i>
+            </div>
             <h3>Ubicación y características</h3>
             <p>
-              El Centro Experimental Amazónico (CEA) es un área protegida de 380 hectáreas, ubicada en el municipio de Mocoa, 
-              departamento del Putumayo, a 650 m.s.n.m., con temperatura promedio de 24°C y precipitación anual de 4.000 mm.
-            </p>
-            <p>
-              El CEA fue creado en 1985 por el INDERENA y transferido a CORPOAMAZONIA en 1995. Está conformado por ecosistemas 
-              de bosque húmedo tropical, con alta diversidad biológica y cultural, representativa del piedemonte amazónico colombiano.
+              Área protegida de 380 hectáreas, ubicada en Mocoa, Putumayo, a 650 m.s.n.m., con temperatura promedio de 24°C 
+              y precipitación anual de 4.000 mm. Creado en 1985 por el INDERENA y transferido a CORPOAMAZONIA en 1995.
             </p>
           </div>
           
-          <div class="info-item">
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fa fa-pagelines"></i>
+            </div>
             <h3>Biodiversidad</h3>
             <p>
-              El CEA alberga una gran diversidad de especies de flora y fauna, incluyendo:
+              Alberga más de 300 especies de aves, 100 especies de mamíferos y numerosas especies de reptiles, anfibios, 
+              insectos y plantas, incluyendo especies maderables, medicinales y ornamentales.
             </p>
-            <ul>
-              <li>Más de 300 especies de aves</li>
-              <li>Más de 100 especies de mamíferos</li>
-              <li>Numerosas especies de reptiles, anfibios e insectos</li>
-              <li>Una rica diversidad de plantas, incluyendo especies maderables, medicinales y ornamentales</li>
-            </ul>
           </div>
           
-          <div class="info-item">
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fa fa-building"></i>
+            </div>
             <h3>Infraestructura</h3>
-            <p>
-              El CEA cuenta con:
-            </p>
             <ul>
               <li>Centro de atención a visitantes</li>
               <li>Senderos ecológicos interpretativos</li>
@@ -66,20 +114,17 @@
               <li>Vivero forestal</li>
               <li>Laboratorios de investigación</li>
               <li>Alojamiento para investigadores</li>
-              <li>Aulas ambientales</li>
-              <li>Zonas de recreación</li>
             </ul>
           </div>
           
-          <div class="info-item">
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fa fa-leaf"></i>
+            </div>
             <h3>Importancia ecológica</h3>
-            <p>
-              El CEA cumple funciones ecológicas vitales como:
-            </p>
             <ul>
-              <li>Conservación de ecosistemas representativos del piedemonte amazónico</li>
+              <li>Conservación de ecosistemas del piedemonte amazónico</li>
               <li>Protección de cuencas hidrográficas</li>
-              <li>Mantenimiento de servicios ecosistémicos</li>
               <li>Conservación de especies amenazadas</li>
               <li>Corredor biológico para la fauna silvestre</li>
             </ul>
@@ -88,215 +133,249 @@
       </div>
     </section>
 
-    <!-- Misión -->
-    <section class="info-section">
-      <div class="section-header" (click)="toggleSection('mision')">
-        <h2>Misión</h2>
-        <i class="fa" [ngClass]="isSectionActive('mision') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-      </div>
-      <div class="section-content" [ngClass]="{'active': isSectionActive('mision')}">
-        <p>
-          Contribuir al conocimiento, conservación y uso sostenible de la biodiversidad del sur de la Amazonia colombiana, 
-          a través de la investigación científica, el desarrollo tecnológico, la educación ambiental y la gestión de información, 
-          para beneficio de la región y sus comunidades.
-        </p>
-      </div>
-    </section>
-
-    <!-- Visión -->
-    <section class="info-section">
-      <div class="section-header" (click)="toggleSection('vision')">
-        <h2>Visión</h2>
-        <i class="fa" [ngClass]="isSectionActive('vision') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-      </div>
-      <div class="section-content" [ngClass]="{'active': isSectionActive('vision')}">
-        <p>
-          Para el año 2030, el Centro Experimental Amazónico será reconocido como un centro de referencia nacional e internacional 
-          en investigación, conservación y educación ambiental para el sur de la Amazonia colombiana, contribuyendo al desarrollo 
-          sostenible de la región y a la preservación de su patrimonio natural y cultural.
-        </p>
-      </div>
-    </section>
-
     <!-- Objetivos -->
     <section class="info-section">
       <div class="section-header" (click)="toggleSection('objetivos')">
+        <div class="header-icon">
+          <i class="fa fa-bullseye"></i>
+        </div>
         <h2>Objetivos</h2>
-        <i class="fa" [ngClass]="isSectionActive('objetivos') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        <div class="toggle-btn">
+          <i class="fa" [ngClass]="isSectionActive('objetivos') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </div>
       </div>
       <div class="section-content" [ngClass]="{'active': isSectionActive('objetivos')}">
-        <ul>
-          <li>Desarrollar investigación científica y tecnológica sobre la biodiversidad amazónica.</li>
-          <li>Conservar muestras representativas de los ecosistemas del piedemonte amazónico.</li>
-          <li>Promover la educación ambiental y la sensibilización sobre la importancia de la conservación.</li>
-          <li>Implementar programas de rehabilitación y reintroducción de fauna silvestre.</li>
-          <li>Fomentar el uso sostenible de los recursos naturales de la región.</li>
-          <li>Servir como espacio para la recreación y el turismo ecológico responsable.</li>
-          <li>Desarrollar modelos productivos sostenibles adaptados a las condiciones amazónicas.</li>
-          <li>Contribuir a la mitigación y adaptación al cambio climático.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Funciones -->
-    <section class="info-section">
-      <div class="section-header" (click)="toggleSection('funciones')">
-        <h2>Funciones</h2>
-        <i class="fa" [ngClass]="isSectionActive('funciones') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-      </div>
-      <div class="section-content" [ngClass]="{'active': isSectionActive('funciones')}">
-        <ul>
-          <li>Centro de investigación científica sobre biodiversidad amazónica.</li>
-          <li>Centro de rehabilitación y manejo de fauna silvestre.</li>
-          <li>Estación biológica para estudios de campo.</li>
-          <li>Centro de educación ambiental para estudiantes y visitantes.</li>
-          <li>Área de conservación de ecosistemas naturales.</li>
-          <li>Espacio para el desarrollo de proyectos productivos sostenibles.</li>
-          <li>Atractivo ecoturístico del departamento del Putumayo.</li>
-          <li>Banco de germoplasma de especies vegetales nativas.</li>
-          <li>Centro de capacitación en prácticas ambientales sostenibles.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Ingreso de visitantes al CEA -->
-    <section class="info-section">
-      <div class="section-header" (click)="toggleSection('ingreso')">
-        <h2>Ingreso de visitantes al CEA</h2>
-        <i class="fa" [ngClass]="isSectionActive('ingreso') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-      </div>
-      <div class="section-content" [ngClass]="{'active': isSectionActive('ingreso')}">
-        <div class="info-grid">
-          <div class="info-item">
-            <h3>Horarios de atención</h3>
-            <p>El Centro Experimental Amazónico atiende a los visitantes en los siguientes horarios:</p>
-            <ul>
-              <li><strong>Lunes a viernes:</strong> 8:00 a.m. a 4:00 p.m.</li>
-              <li><strong>Sábados, domingos y festivos:</strong> 8:00 a.m. a 4:00 p.m.</li>
-            </ul>
-            <p><strong>Nota:</strong> El último ingreso de visitantes es a las 3:00 p.m.</p>
-          </div>
-          
-          <div class="info-item">
-            <h3>Tarifas de ingreso</h3>
-            <div class="tariff-table">
-              <div class="tariff-row header">
-                <div class="tariff-cell">Categoría</div>
-                <div class="tariff-cell">Valor</div>
-              </div>
-              <div class="tariff-row">
-                <div class="tariff-cell">Adultos</div>
-                <div class="tariff-cell">$10.000</div>
-              </div>
-              <div class="tariff-row">
-                <div class="tariff-cell">Niños (5-12 años)</div>
-                <div class="tariff-cell">$5.000</div>
-              </div>
-              <div class="tariff-row">
-                <div class="tariff-cell">Estudiantes con carné</div>
-                <div class="tariff-cell">$7.000</div>
-              </div>
-              <div class="tariff-row">
-                <div class="tariff-cell">Adultos mayores</div>
-                <div class="tariff-cell">$7.000</div>
-              </div>
-              <div class="tariff-row">
-                <div class="tariff-cell">Grupos (más de 20 personas)</div>
-                <div class="tariff-cell">Descuento del 10%</div>
-              </div>
+        <div class="objectives-container">
+          <div class="objective-item">
+            <div class="objective-icon">
+              <i class="fa fa-flask"></i>
             </div>
-            <p><strong>Nota:</strong> Niños menores de 5 años no pagan entrada.</p>
+            <p>Desarrollar investigación científica sobre la biodiversidad amazónica</p>
           </div>
           
-          <div class="info-item">
-            <h3>Recomendaciones para visitantes</h3>
-            <ul>
-              <li>Usar ropa y calzado cómodos, preferiblemente de colores neutros.</li>
-              <li>Traer protector solar, repelente de insectos y sombrero.</li>
-              <li>Traer agua para hidratarse durante el recorrido.</li>
-              <li>No alimentar a los animales.</li>
-              <li>No extraer plantas, animales o cualquier elemento del CEA.</li>
-              <li>Seguir las indicaciones de los guías y del personal del CEA.</li>
-              <li>Depositar los residuos en los contenedores correspondientes.</li>
-              <li>Mantener un comportamiento respetuoso con la naturaleza.</li>
-            </ul>
+          <div class="objective-item">
+            <div class="objective-icon">
+              <i class="fa fa-tree"></i>
+            </div>
+            <p>Conservar muestras representativas de los ecosistemas del piedemonte</p>
           </div>
           
-          <div class="info-item">
-            <h3>Servicios para visitantes</h3>
-            <ul>
-              <li>Guías especializados</li>
-              <li>Senderos interpretativos</li>
-              <li>Áreas de descanso</li>
-              <li>Cafetería</li>
-              <li>Baños</li>
-              <li>Zona de parqueo</li>
-              <li>Tienda de souvenirs</li>
-              <li>Primeros auxilios</li>
-            </ul>
+          <div class="objective-item">
+            <div class="objective-icon">
+              <i class="fa fa-book"></i>
+            </div>
+            <p>Promover la educación ambiental y la sensibilización</p>
+          </div>
+          
+          <div class="objective-item">
+            <div class="objective-icon">
+              <i class="fa fa-paw"></i>
+            </div>
+            <p>Implementar programas de rehabilitación de fauna silvestre</p>
+          </div>
+          
+          <div class="objective-item">
+            <div class="objective-icon">
+              <i class="fa fa-recycle"></i>
+            </div>
+            <p>Fomentar el uso sostenible de los recursos naturales</p>
+          </div>
+          
+          <div class="objective-item">
+            <div class="objective-icon">
+              <i class="fa fa-binoculars"></i>
+            </div>
+            <p>Servir como espacio para el turismo ecológico responsable</p>
+          </div>
+          
+          <div class="objective-item">
+            <div class="objective-icon">
+              <i class="fa fa-leaf"></i>
+            </div>
+            <p>Desarrollar modelos productivos sostenibles</p>
+          </div>
+          
+          <div class="objective-item">
+            <div class="objective-icon">
+              <i class="fa fa-cloud"></i>
+            </div>
+            <p>Contribuir a la mitigación del cambio climático</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Solicitud de material vegetal -->
+    <!-- Ingreso de visitantes -->
+    <section class="info-section">
+      <div class="section-header" (click)="toggleSection('ingreso')">
+        <div class="header-icon">
+          <i class="fa fa-ticket"></i>
+        </div>
+        <h2>Ingreso de visitantes</h2>
+        <div class="toggle-btn">
+          <i class="fa" [ngClass]="isSectionActive('ingreso') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </div>
+      </div>
+      <div class="section-content" [ngClass]="{'active': isSectionActive('ingreso')}">
+        <div class="visitor-info">
+          <div class="visitor-card">
+            <div class="visitor-card-header">
+              <i class="fa fa-clock-o"></i>
+              <h3>Horarios</h3>
+            </div>
+            <div class="visitor-card-content">
+              <p><strong>Lunes a domingo:</strong> 8:00 a.m. a 4:00 p.m.</p>
+              <p><strong>Último ingreso:</strong> 3:00 p.m.</p>
+            </div>
+          </div>
+          
+          <div class="visitor-card">
+            <div class="visitor-card-header">
+              <i class="fa fa-money"></i>
+              <h3>Tarifas</h3>
+            </div>
+            <div class="visitor-card-content">
+              <div class="tariff-table">
+                <div class="tariff-row">
+                  <div class="tariff-category">Adultos</div>
+                  <div class="tariff-price">$10.000</div>
+                </div>
+                <div class="tariff-row">
+                  <div class="tariff-category">Niños (5-12 años)</div>
+                  <div class="tariff-price">$5.000</div>
+                </div>
+                <div class="tariff-row">
+                  <div class="tariff-category">Estudiantes</div>
+                  <div class="tariff-price">$7.000</div>
+                </div>
+                <div class="tariff-row">
+                  <div class="tariff-category">Adultos mayores</div>
+                  <div class="tariff-price">$7.000</div>
+                </div>
+              </div>
+              <p class="tariff-note">Niños menores de 5 años no pagan entrada</p>
+            </div>
+          </div>
+          
+          <div class="visitor-card">
+            <div class="visitor-card-header">
+              <i class="fa fa-check-circle"></i>
+              <h3>Recomendaciones</h3>
+            </div>
+            <div class="visitor-card-content">
+              <ul class="recommendations-list">
+                <li><i class="fa fa-check"></i> Usar ropa y calzado cómodos</li>
+                <li><i class="fa fa-check"></i> Traer protector solar y repelente</li>
+                <li><i class="fa fa-check"></i> Traer agua para hidratarse</li>
+                <li><i class="fa fa-check"></i> No alimentar a los animales</li>
+                <li><i class="fa fa-check"></i> No extraer plantas o animales</li>
+                <li><i class="fa fa-check"></i> Seguir las indicaciones de los guías</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="visitor-card">
+            <div class="visitor-card-header">
+              <i class="fa fa-star"></i>
+              <h3>Servicios</h3>
+            </div>
+            <div class="visitor-card-content">
+              <div class="services-grid">
+                <div class="service-item">
+                  <i class="fa fa-user"></i>
+                  <span>Guías</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-road"></i>
+                  <span>Senderos</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-coffee"></i>
+                  <span>Cafetería</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-car"></i>
+                  <span>Parqueo</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-shopping-bag"></i>
+                  <span>Souvenirs</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-medkit"></i>
+                  <span>Primeros auxilios</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Material vegetal -->
     <section class="info-section">
       <div class="section-header" (click)="toggleSection('material')">
+        <div class="header-icon">
+          <i class="fa fa-seedling"></i>
+        </div>
         <h2>Solicitud de material vegetal</h2>
-        <i class="fa" [ngClass]="isSectionActive('material') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        <div class="toggle-btn">
+          <i class="fa" [ngClass]="isSectionActive('material') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </div>
       </div>
       <div class="section-content" [ngClass]="{'active': isSectionActive('material')}">
-        <div class="info-grid">
-          <div class="info-item">
+        <div class="material-container">
+          <div class="material-left">
+            <div class="material-image">
+              <i class="fa fa-pagelines"></i>
+            </div>
             <h3>Vivero forestal</h3>
             <p>
-              El CEA cuenta con un vivero forestal donde se producen plántulas de especies nativas amazónicas para 
+              El CEA cuenta con un vivero donde se producen plántulas de especies nativas amazónicas para 
               programas de reforestación, restauración ecológica y proyectos productivos sostenibles.
             </p>
-            <p>
-              Las especies disponibles incluyen:
-            </p>
-            <ul>
-              <li>Especies maderables: cedro, abarco, achapo, entre otras.</li>
-              <li>Especies frutales: arazá, copoazú, camu camu, entre otras.</li>
-              <li>Especies ornamentales: heliconias, bromelias, orquídeas, entre otras.</li>
-              <li>Especies medicinales: uña de gato, sangre de drago, entre otras.</li>
-            </ul>
           </div>
           
-          <div class="info-item">
-            <h3>Procedimiento de solicitud</h3>
-            <p>Para solicitar material vegetal del CEA, se debe seguir el siguiente procedimiento:</p>
-            <ol>
-              <li>Presentar una solicitud formal dirigida a la Dirección Territorial Putumayo de CORPOAMAZONIA.</li>
-              <li>Especificar las especies y cantidades requeridas.</li>
-              <li>Indicar el objetivo y destino del material vegetal (reforestación, investigación, etc.).</li>
-              <li>Adjuntar documentos de identificación del solicitante.</li>
-              <li>En caso de proyectos, adjuntar una breve descripción del mismo.</li>
-            </ol>
-          </div>
-          
-          <div class="info-item">
-            <h3>Requisitos</h3>
-            <p>Los requisitos para la entrega de material vegetal son:</p>
-            <ul>
-              <li>La solicitud debe ser aprobada por CORPOAMAZONIA.</li>
-              <li>El solicitante debe comprometerse a dar un uso adecuado al material vegetal.</li>
-              <li>Para cantidades grandes, se debe contar con un plan de siembra y mantenimiento.</li>
-              <li>El transporte del material vegetal corre por cuenta del solicitante.</li>
-              <li>Se debe firmar un acta de entrega y compromiso de uso.</li>
-            </ul>
-          </div>
-          
-          <div class="info-item">
-            <h3>Contacto</h3>
-            <p>Para mayor información sobre la solicitud de material vegetal, puede contactar a:</p>
-            <ul>
-              <li><strong>Dirección:</strong> Centro Experimental Amazónico, Vía Mocoa-Villagarzón km 7, Mocoa, Putumayo</li>
-              <li><strong>Teléfono:</strong> (8) 4296 641</li>
-              <li><strong>Correo electrónico:</strong> ceacorpoamazonia.gov.co</li>
-              <li><strong>Horario de atención:</strong> Lunes a viernes de 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.</li>
-            </ul>
+          <div class="material-right">
+            <div class="species-container">
+              <div class="species-category">
+                <h4><i class="fa fa-tree"></i> Maderables</h4>
+                <p>Cedro, abarco, achapo, entre otras</p>
+              </div>
+              
+              <div class="species-category">
+                <h4><i class="fa fa-apple"></i> Frutales</h4>
+                <p>Arazá, copoazú, camu camu, entre otras</p>
+              </div>
+              
+              <div class="species-category">
+                <h4><i class="fa fa-leaf"></i> Ornamentales</h4>
+                <p>Heliconias, bromelias, orquídeas, entre otras</p>
+              </div>
+              
+              <div class="species-category">
+                <h4><i class="fa fa-medkit"></i> Medicinales</h4>
+                <p>Uña de gato, sangre de drago, entre otras</p>
+              </div>
+            </div>
+            
+            <div class="procedure-container">
+              <h3>Procedimiento de solicitud</h3>
+              <ol class="procedure-steps">
+                <li>Presentar solicitud formal a CORPOAMAZONIA</li>
+                <li>Especificar especies y cantidades requeridas</li>
+                <li>Indicar objetivo y destino del material</li>
+                <li>Adjuntar documentos de identificación</li>
+                <li>Para proyectos, adjuntar descripción</li>
+              </ol>
+              
+              <div class="contact-info">
+                <h3>Contacto</h3>
+                <p><i class="fa fa-map-marker"></i> <strong>Dirección:</strong> Vía Mocoa-Villagarzón km 7</p>
+                <p><i class="fa fa-phone"></i> <strong>Teléfono:</strong> (8) 4296 641</p>
+                <p><i class="fa fa-envelope"></i> <strong>Email:</strong> ceacorpoamazonia.gov.co</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -305,17 +384,25 @@
     <!-- Programas -->
     <section class="info-section">
       <div class="section-header" (click)="toggleSection('programas')">
+        <div class="header-icon">
+          <i class="fa fa-tasks"></i>
+        </div>
         <h2>Programas</h2>
-        <i class="fa" [ngClass]="isSectionActive('programas') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        <div class="toggle-btn">
+          <i class="fa" [ngClass]="isSectionActive('programas') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </div>
       </div>
       <div class="section-content" [ngClass]="{'active': isSectionActive('programas')}">
-        <div class="program-cards">
+        <div class="programs-container">
           <div class="program-card">
             <div class="program-icon">
               <i class="fa fa-flask"></i>
             </div>
             <h3>Investigación</h3>
-            <p>Desarrollo de proyectos de investigación sobre biodiversidad, ecosistemas y servicios ambientales de la región amazónica.</p>
+            <p>Proyectos sobre biodiversidad, ecosistemas y servicios ambientales</p>
+            <div class="program-footer">
+              <a href="#" class="program-link">Más información <i class="fa fa-arrow-right"></i></a>
+            </div>
           </div>
           
           <div class="program-card">
@@ -323,7 +410,10 @@
               <i class="fa fa-leaf"></i>
             </div>
             <h3>Conservación</h3>
-            <p>Protección de ecosistemas naturales, rehabilitación de fauna silvestre y preservación de especies amenazadas.</p>
+            <p>Protección de ecosistemas y rehabilitación de fauna silvestre</p>
+            <div class="program-footer">
+              <a href="#" class="program-link">Más información <i class="fa fa-arrow-right"></i></a>
+            </div>
           </div>
           
           <div class="program-card">
@@ -331,7 +421,10 @@
               <i class="fa fa-book"></i>
             </div>
             <h3>Educación Ambiental</h3>
-            <p>Sensibilización y formación sobre la importancia de la conservación ambiental a través de talleres, recorridos y actividades.</p>
+            <p>Sensibilización sobre la importancia de la conservación</p>
+            <div class="program-footer">
+              <a href="#" class="program-link">Más información <i class="fa fa-arrow-right"></i></a>
+            </div>
           </div>
           
           <div class="program-card">
@@ -339,7 +432,10 @@
               <i class="fa fa-tree"></i>
             </div>
             <h3>Ecoturismo</h3>
-            <p>Promoción del turismo ecológico responsable como herramienta de conservación y desarrollo sostenible.</p>
+            <p>Turismo ecológico responsable como herramienta de conservación</p>
+            <div class="program-footer">
+              <a href="#" class="program-link">Más información <i class="fa fa-arrow-right"></i></a>
+            </div>
           </div>
           
           <div class="program-card">
@@ -347,7 +443,10 @@
               <i class="fa fa-pagelines"></i>
             </div>
             <h3>Producción Sostenible</h3>
-            <p>Desarrollo de modelos productivos sostenibles adaptados a las condiciones amazónicas.</p>
+            <p>Modelos productivos adaptados a las condiciones amazónicas</p>
+            <div class="program-footer">
+              <a href="#" class="program-link">Más información <i class="fa fa-arrow-right"></i></a>
+            </div>
           </div>
           
           <div class="program-card">
@@ -355,7 +454,10 @@
               <i class="fa fa-paw"></i>
             </div>
             <h3>Rehabilitación de Fauna</h3>
-            <p>Atención, rehabilitación y reintroducción de fauna silvestre decomisada o rescatada.</p>
+            <p>Atención y reintroducción de fauna silvestre</p>
+            <div class="program-footer">
+              <a href="#" class="program-link">Más información <i class="fa fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
