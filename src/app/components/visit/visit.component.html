@@ -1,1 +1,469 @@
-<p>visit works!</p>
+<div class="visit-container">
+  <!-- Banner principal -->
+  <div class="visit-banner">
+    <div class="overlay">
+      <div class="banner-content">
+        <h1>Visítanos</h1>
+        <div class="divider">
+          <span class="divider-icon"><i class="fa fa-map-marker"></i></span>
+        </div>
+        <p>Planifica tu visita al Centro Experimental Amazónico</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content-container">
+    <!-- Tabs de navegación -->
+    <div class="visit-tabs">
+      <button 
+        [class.active]="activeTab === 'info'" 
+        (click)="setActiveTab('info')"
+      >
+        <i class="fa fa-info-circle"></i> Información General
+      </button>
+      <button 
+        [class.active]="activeTab === 'map'" 
+        (click)="setActiveTab('map')"
+      >
+        <i class="fa fa-map"></i> Mapa y Atracciones
+      </button>
+      <button 
+        [class.active]="activeTab === 'book'" 
+        (click)="setActiveTab('book')"
+      >
+        <i class="fa fa-ticket"></i> Reserva tu Visita
+      </button>
+      <button 
+        [class.active]="activeTab === 'faq'" 
+        (click)="setActiveTab('faq')"
+      >
+        <i class="fa fa-question-circle"></i> Preguntas Frecuentes
+      </button>
+    </div>
+
+    <!-- Contenido de las tabs -->
+    <div class="tab-content">
+      <!-- Información General -->
+      <div class="tab-pane" [class.active]="activeTab === 'info'">
+        <div class="info-section">
+          <div class="section-header">
+            <h2>Información para Visitantes</h2>
+            <p>Todo lo que necesitas saber para disfrutar de tu visita al Centro Experimental Amazónico</p>
+          </div>
+          
+          <div class="info-grid">
+            <!-- Horarios -->
+            <div class="info-card">
+              <div class="card-icon">
+                <i class="fa fa-clock-o"></i>
+              </div>
+              <h3>Horarios</h3>
+              <div class="schedule-table">
+                <div class="schedule-row">
+                  <div class="day">Lunes a Viernes</div>
+                  <div class="hours">8:00 a.m. - 4:00 p.m.</div>
+                </div>
+                <div class="schedule-row">
+                  <div class="day">Sábados y Domingos</div>
+                  <div class="hours">8:00 a.m. - 5:00 p.m.</div>
+                </div>
+                <div class="schedule-row">
+                  <div class="day">Días Festivos</div>
+                  <div class="hours">9:00 a.m. - 3:00 p.m.</div>
+                </div>
+              </div>
+              <div class="note">
+                <i class="fa fa-info-circle"></i> Último ingreso: 1 hora antes del cierre
+              </div>
+            </div>
+            
+            <!-- Tarifas -->
+            <div class="info-card">
+              <div class="card-icon">
+                <i class="fa fa-money"></i>
+              </div>
+              <h3>Tarifas</h3>
+              <div class="price-table">
+                <div class="price-row">
+                  <div class="category">Adultos</div>
+                  <div class="price">$10.000 COP</div>
+                </div>
+                <div class="price-row">
+                  <div class="category">Niños (5-12 años)</div>
+                  <div class="price">$5.000 COP</div>
+                </div>
+                <div class="price-row">
+                  <div class="category">Estudiantes (con carné)</div>
+                  <div class="price">$7.000 COP</div>
+                </div>
+                <div class="price-row">
+                  <div class="category">Adultos mayores</div>
+                  <div class="price">$7.000 COP</div>
+                </div>
+              </div>
+              <div class="note">
+                <i class="fa fa-info-circle"></i> Niños menores de 5 años: entrada gratuita
+              </div>
+            </div>
+            
+            <!-- Cómo llegar -->
+            <div class="info-card full-width">
+              <div class="card-icon">
+                <i class="fa fa-map-marker"></i>
+              </div>
+              <h3>Cómo Llegar</h3>
+              <div class="location-info">
+                <div class="map-container">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.279603380363!2d-76.63012382522291!3d1.0842286989053749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e28ae3d0fd7c469%3A0xfa3edb0fe991e20b!2sCEA%20(Centro%20Experimental%20Amazonico)!5e1!3m2!1ses-419!2sco!4v1743131043027!5m2!1ses-419!2sco" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+                <div class="directions">
+                  <div class="direction-item">
+                    <div class="direction-icon">
+                      <i class="fa fa-car"></i>
+                    </div>
+                    <div class="direction-text">
+                      <h4>En automóvil</h4>
+                      <p>Ubicado en la vía Mocoa-Villagarzón km 7, a 15 minutos del centro de Mocoa. Hay estacionamiento gratuito disponible.</p>
+                    </div>
+                  </div>
+                  <div class="direction-item">
+                    <div class="direction-icon">
+                      <i class="fa fa-bus"></i>
+                    </div>
+                    <div class="direction-text">
+                      <h4>En transporte público</h4>
+                      <p>Desde Mocoa, toma un bus o colectivo hacia Villagarzón y pide que te dejen en la entrada del CEA.</p>
+                    </div>
+                  </div>
+                  <div class="direction-item">
+                    <div class="direction-icon">
+                      <i class="fa fa-motorcycle"></i>
+                    </div>
+                    <div class="direction-text">
+                      <h4>En mototaxi</h4>
+                      <p>Desde cualquier punto de Mocoa puedes tomar un mototaxi que te llevará directamente al CEA.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Recomendaciones -->
+            <div class="info-card">
+              <div class="card-icon">
+                <i class="fa fa-check-circle"></i>
+              </div>
+              <h3>Recomendaciones</h3>
+              <ul class="recommendations-list">
+                <li><i class="fa fa-check"></i> Usa ropa y calzado cómodos</li>
+                <li><i class="fa fa-check"></i> Trae protector solar y repelente</li>
+                <li><i class="fa fa-check"></i> Lleva agua para hidratarte</li>
+                <li><i class="fa fa-check"></i> Trae una cámara para capturar momentos</li>
+                <li><i class="fa fa-check"></i> Respeta las señalizaciones</li>
+                <li><i class="fa fa-check"></i> No alimentes a los animales</li>
+                <li><i class="fa fa-check"></i> Deposita la basura en los contenedores</li>
+              </ul>
+            </div>
+            
+            <!-- Servicios -->
+            <div class="info-card">
+              <div class="card-icon">
+                <i class="fa fa-star"></i>
+              </div>
+              <h3>Servicios</h3>
+              <div class="services-grid">
+                <div class="service-item">
+                  <i class="fa fa-coffee"></i>
+                  <span>Cafetería</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-shopping-bag"></i>
+                  <span>Tienda de recuerdos</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-wheelchair"></i>
+                  <span>Accesibilidad</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-restroom"></i>
+                  <span>Baños</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-user"></i>
+                  <span>Guías</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-medkit"></i>
+                  <span>Primeros auxilios</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-wifi"></i>
+                  <span>WiFi gratuito</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa fa-car"></i>
+                  <span>Estacionamiento</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mapa y Atracciones -->
+      <div class="tab-pane" [class.active]="activeTab === 'map'">
+        <div class="map-section">
+          <div class="section-header">
+            <h2>Mapa y Atracciones</h2>
+            <p>Explora las diferentes áreas y atracciones del Centro Experimental Amazónico</p>
+          </div>
+          
+          <div class="interactive-map-container">
+            <div class="zoo-map">
+              <img src="../../../assets/images/mapa.jpg" alt="Mapa del zoológico" class="map-image">
+              
+              <div class="map-hotspots">
+                <div 
+                  *ngFor="let attraction of attractions" 
+                  class="map-hotspot" 
+                  [id]="attraction.id"
+                  [class.active]="selectedLocation === attraction.id"
+                  (click)="selectLocation(attraction.id)"
+                >
+                  <div class="hotspot-dot"></div>
+                  <div class="hotspot-label">{{attraction.name}}</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="attraction-details">
+              <h3>Nuestras Atracciones</h3>
+              
+              <div class="attractions-grid">
+                <div 
+                  *ngFor="let attraction of attractions" 
+                  class="attraction-card"
+                  [class.active]="selectedLocation === attraction.id"
+                  (click)="selectLocation(attraction.id)"
+                >
+                  <div class="attraction-image">
+                    <img [src]="attraction.image" [alt]="attraction.name">
+                  </div>
+                  <div class="attraction-info">
+                    <h4>{{attraction.name}}</h4>
+                    <p>{{attraction.description}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Reserva tu Visita -->
+      <div class="tab-pane" [class.active]="activeTab === 'book'">
+        <div class="booking-section">
+          <div class="section-header">
+            <h2>Reserva tu Visita</h2>
+            <p>Asegura tu entrada y evita filas reservando con anticipación</p>
+          </div>
+          
+          <div class="booking-container">
+            <div class="booking-form-container">
+              <form class="booking-form" (ngSubmit)="bookVisit()">
+                <div class="form-group">
+                  <label for="visit-date">Fecha de visita</label>
+                  <input 
+                    type="date" 
+                    id="visit-date" 
+                    [(ngModel)]="selectedDate" 
+                    name="visitDate"
+                    [min]="selectedDate"
+                    required
+                  >
+                </div>
+                
+                <div class="form-group">
+                  <label for="visit-time">Hora de visita</label>
+                  <select 
+                    id="visit-time" 
+                    [(ngModel)]="selectedTime" 
+                    name="visitTime"
+                    required
+                  >
+                    <option value="" disabled selected>Selecciona una hora</option>
+                    <option *ngFor="let time of getAvailableTimes()" [value]="time">{{time}}</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="visitor-count">Número de visitantes</label>
+                  <div class="counter-input">
+                    <button 
+                      type="button" 
+                      class="counter-btn" 
+                      (click)="visitorCount = visitorCount > 1 ? visitorCount - 1 : 1"
+                    >-</button>
+                    <input 
+                      type="number" 
+                      id="visitor-count" 
+                      [(ngModel)]="visitorCount" 
+                      name="visitorCount"
+                      min="1" 
+                      max="20"
+                      readonly
+                    >
+                    <button 
+                      type="button" 
+                      class="counter-btn" 
+                      (click)="visitorCount = visitorCount < 20 ? visitorCount + 1 : 20"
+                    >+</button>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="visitor-name">Nombre completo</label>
+                  <input type="text" id="visitor-name" name="visitorName" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="visitor-email">Correo electrónico</label>
+                  <input type="email" id="visitor-email" name="visitorEmail" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="visitor-phone">Teléfono</label>
+                  <input type="tel" id="visitor-phone" name="visitorPhone" required>
+                </div>
+                
+                <div class="form-actions">
+                  <button type="submit" class="book-button">Reservar Ahora</button>
+                </div>
+              </form>
+            </div>
+            
+            <div class="booking-info">
+              <div class="info-box">
+                <h3><i class="fa fa-info-circle"></i> Información de Reserva</h3>
+                <ul>
+                  <li>La reserva debe realizarse con al menos 24 horas de anticipación.</li>
+                  <li>El pago se realiza en la entrada del zoológico el día de la visita.</li>
+                  <li>Recibirás un correo de confirmación con los detalles de tu reserva.</li>
+                  <li>En caso de cancelación, por favor notifícanos con 24 horas de anticipación.</li>
+                  <li>Las reservas tienen una tolerancia de 30 minutos después de la hora seleccionada.</li>
+                </ul>
+              </div>
+              
+              <div class="special-offers">
+                <h3><i class="fa fa-gift"></i> Ofertas Especiales</h3>
+                <div class="offer-card">
+                  <div class="offer-badge">15% OFF</div>
+                  <h4>Paquete Familiar</h4>
+                  <p>Descuento especial para familias de 4 o más personas.</p>
+                </div>
+                <div class="offer-card">
+                  <div class="offer-badge">20% OFF</div>
+                  <h4>Grupos Escolares</h4>
+                  <p>Descuento para grupos escolares de 15 o más estudiantes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Confirmación de reserva -->
+          <div class="booking-confirmation" *ngIf="showBookingConfirmation">
+            <div class="confirmation-content">
+              <div class="confirmation-icon">
+                <i class="fa fa-check-circle"></i>
+              </div>
+              <h3>¡Reserva Confirmada!</h3>
+              <p>Hemos recibido tu solicitud de reserva. En breve recibirás un correo electrónico con los detalles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Preguntas Frecuentes -->
+      <div class="tab-pane" [class.active]="activeTab === 'faq'">
+        <div class="faq-section">
+          <div class="section-header">
+            <h2>Preguntas Frecuentes</h2>
+            <p>Respuestas a las dudas más comunes sobre tu visita al Centro Experimental Amazónico</p>
+          </div>
+          
+          <div class="faq-container">
+            <div class="faq-list">
+              <div 
+                *ngFor="let faq of faqs; let i = index" 
+                class="faq-item"
+                [class.active]="activeFaq === i"
+              >
+                <div class="faq-question" (click)="toggleFaq(i)">
+                  <h3>{{faq.question}}</h3>
+                  <div class="faq-icon">
+                    <i class="fa" [ngClass]="activeFaq === i ? 'fa-minus' : 'fa-plus'"></i>
+                  </div>
+                </div>
+                <div class="faq-answer" [class.active]="activeFaq === i">
+                  <p>{{faq.answer}}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-info">
+              <h3>¿No encontraste lo que buscabas?</h3>
+              <p>Contáctanos directamente y responderemos a todas tus dudas.</p>
+              
+              <div class="contact-methods">
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fa fa-phone"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h4>Teléfono</h4>
+                    <p>(+57) 311-234-5678</p>
+                  </div>
+                </div>
+                
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fa fa-envelope"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h4>Email</h4>
+                    <p>infoceamocoa.com</p>
+                  </div>
+                </div>
+                
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fa fa-whatsapp"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h4>WhatsApp</h4>
+                    <p>(+57) 311-234-5678</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="contact-button-container">
+                <button class="contact-button" [routerLink]="'/contacto'">
+                  Ir a Contacto <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
