@@ -30,6 +30,23 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Añade sombra al texto para mejorar legibilidad */
 }
 
+.hero-title {
+  font-size: 2.9rem; /* Tamaño del título */
+  margin-bottom: 0.3rem; /* Espaciado entre título y descripción */
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 1rem; /* Espaciado entre descripción y botones */
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem; /* Aumenta el espacio entre botones */
+  margin-top: 1rem; /* Espaciado entre descripción y botones */
+}
+
 /* Asegúrate de que los botones sean visibles sobre la imagen */
 .primary-button {
   background-color: #16a34a;
@@ -62,11 +79,6 @@
 .secondary-button:hover {
   background-color: white;
   color: #15803d;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
 }
 
 /* Media queries para responsividad */

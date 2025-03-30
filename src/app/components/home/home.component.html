@@ -3,16 +3,19 @@
   <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">Zoológico de Mocoa</h1>
+      <h1 class="hero-title">Centro Experimental Amazonico</h1>
       <p class="hero-description">
-        Descubre la biodiversidad del Putumayo en un espacio dedicado a la
-        conservación y educación ambiental
+        Descubre la biodiversidad del Putumayo en un espacio dedicado 
+        a la conservación y educación ambiental
       </p>
       <div class="hero-buttons">
         <button class="primary-button" (click)="openTicketBooking()">
           Planea tu visita
         </button>
-        <button class="secondary-button">Conoce nuestros animales</button>
+        <button class="secondary-button" [routerLink]="'/animales'">
+          Conoce nuestros animales
+        </button>
+        
       </div>
     </div>
   </section>
@@ -111,7 +114,10 @@
         </div>
       </div>
       <div class="section-footer">
-        <button class="primary-button">Ver todos los animales</button>
+        <button class="primary-button" [routerLink]="'/animales'">
+          Ver todos los animales
+        </button>
+        
       </div>
     </div>
   </section>
