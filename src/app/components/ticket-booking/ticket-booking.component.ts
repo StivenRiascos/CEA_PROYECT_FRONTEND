@@ -13,7 +13,7 @@ interface TicketType {
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './ticket-booking.component.html',
-  styleUrl: './ticket-booking.component.css',
+  styleUrl: './ticket-booking.component.scss',
 })
 export class TicketBookingComponent {
   @Output() close = new EventEmitter<void>();

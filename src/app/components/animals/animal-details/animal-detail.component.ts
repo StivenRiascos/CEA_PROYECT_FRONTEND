@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './animal-detail.component.html',
-  styleUrls: ['./animal-detail.component.css']
+  styleUrls: ['./animal-detail.component.scss'],
 })
 export class AnimalDetailComponent {
   @Input() animal: any;

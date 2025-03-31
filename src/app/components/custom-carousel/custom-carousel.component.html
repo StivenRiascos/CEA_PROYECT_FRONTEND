@@ -1,0 +1,11 @@
+<div class="carrusell">
+  <c-carousel [interval]="5000" transition="slide" [pause]="false">
+    <c-carousel-inner>
+      @for (item of images; track $index) {
+      <c-carousel-item [interval]="5000">
+        <img [src]="item" [alt]="item" class="d-block w-100" loading="lazy" />
+      </c-carousel-item>
+      }
+    </c-carousel-inner>
+  </c-carousel>
+</div>

@@ -1,15 +1,15 @@
-// home.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BookingService } from '../../services/booking.service';
+import { CustomCarouselComponent } from '../../components/custom-carousel/custom-carousel.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, CustomCarouselComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   featuredAnimals = [
@@ -19,9 +19,9 @@ export class HomeComponent {
     { name: 'Anaconda', image: 'Anaconda.jpg', slug: 'Anaconda' },
   ];
 
-  constructor(private bookingService: BookingService) {}
-
-  openTicketBooking(): void {
-    this.bookingService.openBookingModal();
-  }
+  carouselImages = [
+    '../../assets/images/cea.jpg',
+    '../../assets/images/img3.jpg',
+    '../../assets/images/img4.jpg',
+  ];
 }

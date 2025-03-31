@@ -1,22 +1,19 @@
 <main class="home-page">
-  <!-- Hero Section -->
   <section class="hero-section">
-    <div class="hero-overlay"></div>
+    <!-- Reemplazar el ngb-carousel con nuestro componente personalizado -->
+    <app-custom-carousel
+      [images]="carouselImages"
+      title="Centro Experimental Amazónico"
+      description="Descubre la biodiversidad del Putumayo en un espacio dedicado a la conservación y educación ambiental"
+    >
+    </app-custom-carousel>
+
     <div class="hero-content">
-      <h1 class="hero-title">Centro Experimental Amazonico</h1>
+      <h1 class="hero-title">Centro Experimental Amazónico</h1>
       <p class="hero-description">
-        Descubre la biodiversidad del Putumayo en un espacio dedicado 
-        a la conservación y educación ambiental
+        Descubre la biodiversidad del Putumayo en un espacio dedicado a la
+        conservación y educación ambiental
       </p>
-      <div class="hero-buttons">
-        <button class="primary-button" (click)="openTicketBooking()">
-          Planea tu visita
-        </button>
-        <button class="secondary-button" [routerLink]="'/animales'">
-          Conoce nuestros animales
-        </button>
-        
-      </div>
     </div>
   </section>
 
@@ -117,7 +114,6 @@
         <button class="primary-button" [routerLink]="'/animales'">
           Ver todos los animales
         </button>
-        
       </div>
     </div>
   </section>

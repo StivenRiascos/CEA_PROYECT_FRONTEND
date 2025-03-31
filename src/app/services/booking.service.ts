@@ -11,6 +11,7 @@ export class BookingService {
   openBookingModal$ = this.openBookingModalSource.asObservable();
 
   openBookingModal() {
+    console.log('Modal de reserva abierto'); // ✅ Prueba si se ejecuta
     this.openBookingModalSource.next();
   }
 }

@@ -10,18 +10,21 @@ import { FooterComponent } from './components/footer/footer.component';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'CEA-mocoa';
 
-  constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (isPlatformBrowser(this.platformId)) {
           // Asegura que `window` solo se usa en el navegador
           window.scrollTo(0, 0);
-          
+
           /* 
           // Opción con desplazamiento suave (desactivada)
           setTimeout(() => {
