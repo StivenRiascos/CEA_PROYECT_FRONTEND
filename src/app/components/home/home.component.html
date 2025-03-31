@@ -1,27 +1,19 @@
 <main class="home-page">
   <section class="hero-section">
-    <!-- Reemplazar el ngb-carousel con nuestro componente personalizado -->
     <app-custom-carousel
       [images]="carouselImages"
       title="Centro Experimental Amazónico"
       description="Descubre la biodiversidad del Putumayo en un espacio dedicado a la conservación y educación ambiental"
-    >
-    </app-custom-carousel>
-
-    <div class="hero-content">
-      <h1 class="hero-title">Centro Experimental Amazónico</h1>
-      <p class="hero-description">
-        Descubre la biodiversidad del Putumayo en un espacio dedicado a la
-        conservación y educación ambiental
-      </p>
-    </div>
+      (primaryButtonClick)="openTicketBooking()"
+      (secondaryButtonClick)="navigateToAnimals()"
+    ></app-custom-carousel>
   </section>
 
   <!-- About Section -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Bienvenidos al Zoológico de Mocoa</h2>
+        <h2 class="section-title">Bienvenidos al CEA</h2>
         <p class="section-description">
           Un espacio dedicado a la conservación de la fauna amazónica, la
           educación ambiental y la investigación científica.

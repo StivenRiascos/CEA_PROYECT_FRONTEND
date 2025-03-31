@@ -7,5 +7,21 @@
       </c-carousel-item>
       }
     </c-carousel-inner>
+    
+    <!-- Añadir contenido superpuesto al carrusel -->
+    <div class="carousel-overlay">
+      <div class="hero-content">
+        <h1 class="hero-title">{{title || 'Centro Experimental Amazonico'}}</h1>
+        <p class="hero-description">{{description || 'Descubre la biodiversidad del Putumayo en un espacio dedicado a la conservación y educación ambiental'}}</p>
+        <div class="hero-buttons">
+          <button class="primary-button" (click)="onPrimaryButtonClick()">
+            Planea tu visita
+          </button>
+          <button class="secondary-button" (click)="onSecondaryButtonClick()">
+            Conoce nuestros animales
+          </button>
+        </div>
+      </div>
+    </div>
   </c-carousel>
 </div>

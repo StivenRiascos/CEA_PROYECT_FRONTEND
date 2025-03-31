@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { BookingService } from '../../services/booking.service';
 import { CustomCarouselComponent } from '../../components/custom-carousel/custom-carousel.component';
 
@@ -24,4 +24,14 @@ export class HomeComponent {
     '../../assets/images/img3.jpg',
     '../../assets/images/img4.jpg',
   ];
+  
+  constructor(private bookingService: BookingService, private router: Router) {}
+  
+  openTicketBooking(): void {
+    this.bookingService.openBookingModal();
+  }
+  
+  navigateToAnimals(): void {
+    this.router.navigate(['/animales']);
+  }
 }

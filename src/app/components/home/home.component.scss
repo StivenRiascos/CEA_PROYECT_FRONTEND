@@ -1,176 +1,30 @@
-/* Estilos del carrusel */
-.carousel-container {
-  position: relative;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 40px 0;
-  overflow: hidden;
+/* Estilos para la página de inicio */
+.home-page {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-  min-width: 100%;
-  flex-shrink: 0;
-  transition: transform 0.5s ease-in-out;
+.hero-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   display: block;
-}
-
-.carousel-item img {
-  width: 100%; /* Fuerza que las imágenes ocupen el 100% del ancho del contenedor */
-  height: 600px; /* Puedes ajustar esta altura según lo que necesites */
-  object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsionar */
-  border-radius: 15px;
-}
-
-/* Contenido sobre el carrusel alineado correctamente */
-.hero-content {
-  position: absolute;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  max-width: 60%;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 25px;
-  border-radius: 10px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.hero-description {
-  font-size: 1.5rem;
-  margin-bottom: 25px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.primary-button,
-.secondary-button {
-  padding: 12px 25px;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.primary-button {
-  background: #28a745;
-  color: white;
-}
-
-.primary-button:hover {
-  background: #218838;
-}
-
-.secondary-button {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-}
-
-.secondary-button:hover {
-  background: white;
-  color: #333;
-}
-
-.hero-content {
   position: relative;
-  z-index: 10;
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1rem;
-  text-align: center;
-  color: white; /* Asegura que el texto sea blanco para contrastar con la imagen */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Añade sombra al texto para mejorar legibilidad */
-}
-
-.hero-title {
-  font-size: 2.9rem; /* Tamaño del título */
-  margin-bottom: 0.3rem; /* Espaciado entre título y descripción */
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin-bottom: 1rem; /* Espaciado entre descripción y botones */
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1.5rem; /* Aumenta el espacio entre botones */
-  margin-top: 1rem; /* Espaciado entre descripción y botones */
-}
-
-/* Asegúrate de que los botones sean visibles sobre la imagen */
-.primary-button {
-  background-color: #16a34a;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.primary-button:hover {
-  background-color: #15803d;
-}
-
-.secondary-button {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.secondary-button:hover {
-  background-color: white;
-  color: #15803d;
-}
-
-/* Media queries para responsividad */
-@media (max-width: 640px) {
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
+  overflow: hidden;
+  background: none !important; /* Mantener esta línea para eliminar el fondo azul */
 }
 
 /* Section Styles */
 .section {
-  padding: 4rem 0;
+  padding: 3rem 0; /* Restaurar el padding original */
+  position: relative;
+}
+
+/* Excepción solo para la primera sección después del hero para evitar el espacio en blanco */
+.section:first-of-type {
+  padding-top: 2rem;
 }
 
 .animals-section {
@@ -323,6 +177,7 @@
 .section-footer {
   margin-top: 2.5rem;
   text-align: center;
+  margin-bottom: 2rem; /* Añadir margen inferior para el botón "Ver todos los animales" */
 }
 
 /* Visit Information */
@@ -352,6 +207,11 @@
   color: #16a34a;
 }
 
+/* Añadir espacio adicional para el segundo título dentro de un info-card */
+.info-card .info-title:not(:first-child) {
+  margin-top: 2.5rem; /* Espacio considerable entre secciones */
+}
+
 .info-description {
   margin-bottom: 1rem;
   color: #4b5563;
@@ -374,6 +234,7 @@
   display: flex;
   justify-content: space-between;
   color: #4b5563;
+  margin-bottom: 0.5rem; /* Añadir espacio entre los elementos de la lista */
 }
 
 .map-container {
@@ -463,4 +324,66 @@
 
 .newsletter-button:hover {
   background-color: #f9fafb;
+}
+
+/* Estilos para los botones del carrusel - Estos se aplicarán si no se usan los del componente */
+.primary-button {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+  background-color: #15803d;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.secondary-button:hover {
+  background-color: white;
+  color: #15803d;
+}
+
+/* Estilos específicos para la sección "Planea tu Visita" */
+.visit-section {
+  padding-top: 3rem; /* Asegurar espacio adecuado antes de esta sección */
+}
+
+.visit-section .section-title {
+  margin-bottom: 1.5rem;
+}
+
+.visit-section .section-description {
+  margin-bottom: 3rem;
+}
+
+/* Estilos para las tarifas */
+.tarifas {
+  margin-top: 2rem;
+}
+
+.tarifas .info-title {
+  margin-bottom: 1.5rem;
+}
+
+/* Añadir espacio adicional para el botón "Ver todos los animales" */
+.section-footer a {
+  margin-top: 1.5rem;
+  display: inline-block;
 }
